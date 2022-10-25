@@ -84,23 +84,23 @@ function startCrawling(page) {
         var companyName, medcineName, isHealthCertification, effects, medicineImageUrl;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, getCompanyName(page)];
+                case 0: return [4 /*yield*/, _getCompanyName(page)];
                 case 1:
                     companyName = _a.sent();
                     console.log("companyName", companyName);
-                    return [4 /*yield*/, getMedicineName(page)];
+                    return [4 /*yield*/, _getMedicineName(page)];
                 case 2:
                     medcineName = _a.sent();
                     console.log("medcineName", medcineName);
-                    return [4 /*yield*/, getIsHealthCertification(page)];
+                    return [4 /*yield*/, _getIsHealthCertification(page)];
                 case 3:
                     isHealthCertification = _a.sent();
                     console.log("isHealthCertification", isHealthCertification);
-                    return [4 /*yield*/, getEffects(page)];
+                    return [4 /*yield*/, _getEffects(page)];
                 case 4:
                     effects = _a.sent();
                     console.log("effects", effects);
-                    return [4 /*yield*/, getMedicineImageUrl(page)];
+                    return [4 /*yield*/, _getMedicineImageUrl(page)];
                 case 5:
                     medicineImageUrl = _a.sent();
                     console.log("medicineImageUrl", medicineImageUrl);
