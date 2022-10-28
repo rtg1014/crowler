@@ -36,12 +36,48 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var _this = this;
 var pupperteer = require("puppeteer");
+var fs = require("fs");
 var _getCompanyName = require("./functions/getCompanyName");
 var _getMedicineName = require("./functions/getMedicineName");
 var _getIsHealthCertification = require("./functions/getIsHealthCertification");
 var _getEffects = require("./functions/getEffects");
 var _getMedicineImageUrl = require("./functions/getMedicineImageUrl");
+var _getMerchandiseHowToConsume = require("./functions/getMerchandiseHowToConsume");
 (function () { return __awaiter(_this, void 0, void 0, function () {
+    function startCrawling(page) {
+        return __awaiter(this, void 0, void 0, function () {
+            var companyName, medcineName, isHealthCertification, effects, medicineImageUrl, merchandiseHowToconsume;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, _getCompanyName(page)];
+                    case 1:
+                        companyName = _a.sent();
+                        console.log("companyName", companyName);
+                        return [4 /*yield*/, _getMedicineName(page)];
+                    case 2:
+                        medcineName = _a.sent();
+                        console.log("medcineName", medcineName);
+                        return [4 /*yield*/, _getIsHealthCertification(page)];
+                    case 3:
+                        isHealthCertification = _a.sent();
+                        console.log("isHealthCertification", isHealthCertification);
+                        return [4 /*yield*/, _getEffects(page)];
+                    case 4:
+                        effects = _a.sent();
+                        console.log("effects", effects);
+                        return [4 /*yield*/, _getMedicineImageUrl(page)];
+                    case 5:
+                        medicineImageUrl = _a.sent();
+                        console.log("medicineImageUrl", medicineImageUrl);
+                        return [4 /*yield*/, _getMerchandiseHowToConsume(page)];
+                    case 6:
+                        merchandiseHowToconsume = _a.sent();
+                        console.log('merchandiseHowToConsume', merchandiseHowToconsume);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    }
     var browser, page, i;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -79,36 +115,6 @@ var _getMedicineImageUrl = require("./functions/getMedicineImageUrl");
         }
     });
 }); })();
-function startCrawling(page) {
-    return __awaiter(this, void 0, void 0, function () {
-        var companyName, medcineName, isHealthCertification, effects, medicineImageUrl;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, _getCompanyName(page)];
-                case 1:
-                    companyName = _a.sent();
-                    console.log("companyName", companyName);
-                    return [4 /*yield*/, _getMedicineName(page)];
-                case 2:
-                    medcineName = _a.sent();
-                    console.log("medcineName", medcineName);
-                    return [4 /*yield*/, _getIsHealthCertification(page)];
-                case 3:
-                    isHealthCertification = _a.sent();
-                    console.log("isHealthCertification", isHealthCertification);
-                    return [4 /*yield*/, _getEffects(page)];
-                case 4:
-                    effects = _a.sent();
-                    console.log("effects", effects);
-                    return [4 /*yield*/, _getMedicineImageUrl(page)];
-                case 5:
-                    medicineImageUrl = _a.sent();
-                    console.log("medicineImageUrl", medicineImageUrl);
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
 // FIXME;
 // 주요기능 보조기능은 아직 뭉텅이로 크롤링한 상태. 세분화 필요함
 // 건강기능식품 유무는 링크 자체가 달라져서 이건 자동화 하는 부분에서 첫번째 링크로 크롤링 후 만약 leangth 가 없다면 다음 링크에서 다시 출력하게끔 하는 형태로 해야될 것 같음
